@@ -82,12 +82,45 @@ function classificaTriangulo(ladoA, ladoB, ladoC) {
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+
+    let maior = array[0]
+    let menor = array[0]
+
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > maior) {
+            maior = array[i]
+        }
+
+        if (array[i] < menor) {
+            menor = array[i]
+        }
+    }
+
+    if (array.length === 2) {
+        return [menor, maior]
+    }
+
+    let novoArray = array.filter((number) => number !== maior && number !== menor)
+
+    let segundoMaior = novoArray[0]
+    let segundoMenor = novoArray[0]
+
+    for (let i = 0; i < novoArray.length; i++) {
+        if (novoArray[i] > segundoMaior) {
+            segundoMaior = novoArray[i]
+        }
+
+        if (novoArray[i] < segundoMenor) {
+            segundoMenor = novoArray[i]
+        }
+    }
+
+    return [segundoMaior, segundoMenor]
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+   return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por${filme.atores.map((item) => ` ${item}`)}.`
 }
 
 // EXERCÍCIO 12
