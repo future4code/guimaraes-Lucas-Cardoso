@@ -30,7 +30,15 @@ function retornaNumerosParesElevadosADois(array) {
 
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
+  let maior = array[0]
+
+  for (let i = 0; i < array.length; i++) {
+      if (array[i] > maior) {
+          maior = array[i]
+      }
+  }
   
+  return maior
 }
 
 // EXERCÍCIO 07
