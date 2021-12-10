@@ -140,7 +140,13 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    return contas.map((obj) => {
+        return {
+            ...obj,
+            saldoTotal: obj.saldoTotal - obj.compras.reduce((a, b) => a + b, 0),
+            compras: [],
+        }
+    })
 }
 
 // EXERCÍCIO 15A
