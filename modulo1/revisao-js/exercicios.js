@@ -130,12 +130,12 @@ function retornaPessoaAnonimizada(pessoa) {
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-    return pessoas.filter((obj) => obj.idade >= 15 && obj.idade < 70 && obj.altura >= 1.79)
+    return pessoas.filter((obj) => obj.idade > 14 && obj.idade < 70 && obj.altura >= 1.5)
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-    return pessoas.filter((obj) => obj.idade < 15 || obj.idade >= 70 || obj.altura < 1.79)
+    return pessoas.filter((obj) => obj.idade <= 14 || obj.idade >= 60 || obj.altura < 1.5)
 }
 
 // EXERCÍCIO 14
@@ -164,5 +164,25 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+    return consultas.sort((a, b) => {
+        if (Number(a.dataDaConsulta.slice(6)) > Number(b.dataDaConsulta.slice(6))) {
+            return 1
+        } else if (Number(a.dataDaConsulta.slice(6)) < Number(b.dataDaConsulta.slice(6))) {
+            return -1
+        }
+
+        if (Number(a.dataDaConsulta.slice(3, -5)) > Number(b.dataDaConsulta.slice(3, -5))) {
+            return 1
+        } else if (Number(a.dataDaConsulta.slice(3, -5)) < Number(b.dataDaConsulta.slice(3, -5))) {
+            return -1
+        }
+
+        if (Number(a.dataDaConsulta.slice(0, 2)) > Number(b.dataDaConsulta.slice(0, 2))) {
+            return 1
+        } else if (Number(a.dataDaConsulta.slice(0, 2)) < Number(b.dataDaConsulta.slice(0, 2))) {
+            return -1
+        }
+
+        return 0
+    })
 }
