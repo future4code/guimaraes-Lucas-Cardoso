@@ -127,6 +127,11 @@ td button:active {
     color: white;
 }
 
+.container-da-tabela {
+    display: flex;
+    justify-content: center;
+}
+
 .container-do-search {
     margin-top: 20px;
     height: 100px;
