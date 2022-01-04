@@ -21,10 +21,6 @@ input {
     width: 500px;
 }
 
-button:focus {
-    color: white;
-}
-
 img {
     width: 100px;
 }
@@ -116,6 +112,15 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+}
+
+td button:hover {
+    background-color: #d8bd46;
+    transition: background-color 0.2s ease;
+}
+
+td button:active {
+    color: white;
 }
 
 .container-do-search {
