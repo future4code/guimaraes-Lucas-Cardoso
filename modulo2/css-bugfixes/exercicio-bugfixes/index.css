@@ -150,6 +150,16 @@ td button:active {
 .container-do-search img {
     width: 15px;
     height: 15px;
+    cursor: pointer;
+}
+
+.container-do-search img:hover {
+    filter: opacity(55%);
+    transition: filter 0.1s ease;
+}
+
+.container-do-search img:active {
+    filter: opacity(100%);
 }
 
 #back-button {
@@ -160,6 +170,7 @@ td button:active {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin-top: 50px;
 }
 
 #back-button:hover {
