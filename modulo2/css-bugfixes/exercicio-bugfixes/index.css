@@ -64,6 +64,7 @@ div>p:first-child {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #container-de-descricao>ol {
