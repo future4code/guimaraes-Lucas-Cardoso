@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --dark-pink: mediumvioletred;
+    --light-pink: #f2d0e0;
+    --card-shadow: darkgray;
+}
+
+#icon {
+    width: 2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+
+
+/* HEADDER */
+
+header {
+    background-color: var(--dark-pink);
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+header > div {
+    display: flex;
+    justify-content: space-between;
+    width: 13rem;
+}
+
+header > button {
+    width: 80px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+header > * {
+    margin: 1.5rem;
+}
+
+
+
+/* CONTENT */
+
+#container {
+    display: flex;
+}
+
+
+
+/* NAV BAR */
+
+nav {
+    width: 33%;
+    background-color: var(--light-pink);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+}
+
+nav > * {
+    padding: 1rem 1.8rem 1rem 1.8rem;
+}
+
+.navItem {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.navItem:hover {
+    background-color: #e8acc8;
+    transition: background-color 0.1s;
+}
+
+.navItem > div {
+    display: flex;
+    align-items: center;
+}
+
+.navItem > div > span {
+    margin-left: 1rem;
+}
+
+
+
+/* MAIN */
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 1.5rem;
+}
+
+main:after{
+    content: '';
+    width: 22%;
+}
+
+.cakeContainer {
+    width: 23%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.cakeContainer img {
+    width: 100%;
+}
+
+.cakeContainer div {
+    text-align: center;
+    padding: 0.2rem;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.cakeContainer p {
+    font-size: 20px;
+    margin-top: 1rem;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    background-color: var(--dark-pink);
+    height: 4.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 21px;
+}
