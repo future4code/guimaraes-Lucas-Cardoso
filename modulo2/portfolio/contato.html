@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Lucas Cardoso</title>
+    <style>
+        .margin {
+            margin-bottom: 3rem;
+        }
+
+        #formulario {
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 7rem;
+        }
+
+        #formulario h5 {
+            font-family: 'Dosis', sans-serif;
+            text-transform: uppercase;
+            font-size: 2rem;
+        }
+
+        input {
+            height: 30px;
+            width: 500px;
+            margin-bottom: 1.5rem;
+        }
+
+        .mensagem {
+            height: 150px;
+        }
+
+        #send {
+            width: 500px;
+            height: 75px;
+            text-transform: uppercase;
+            font-size: 1rem;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            transition: color 0.4s;
+            margin-top: 1rem;
+        }
+
+        #send:hover {
+            background-color: var(--background-color);
+            color: white;
+            transition: background-color 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="margin">
+            <a href="./index.html">
+                <h2>Lucas Cardoso</h2>
+            </a>
+            <button>Contatar</button>
+        </header>
+
+        <div id="formulario">
+            <div class="input-container">
+                <h5 style="font-weight: normal;">Nome:</h5>
+                <input type="text">
+            </div>
+            <div class="input-container">
+                <h5>E-mail:</h5>
+                <input type="text">
+            </div>
+            <div class="input-container">
+                <h5>Mensagem:</h5>
+                <input type="text" class="mensagem">
+            </div>
+            <button id="send">Enviar</button>
+        </div>
+    </div>
+    <footer style="margin-top: 0;">
+        <div>
+            <a href="https://github.com/padocaking" target="_blank">
+                <img src="./images/github.png" alt="Github">
+            </a>
+            <a href="https://www.linkedin.com/in/lucas-cardoso-78a19021a/" target="_blank">
+                <img src="./images/linkedin.png" alt="Linkedin">
+            </a>
+            <a href="#">
+                <img src="./images/email.png" alt="E-mail">
+             </a>
+        </div>
+    </footer>
+</body>
+</html>
