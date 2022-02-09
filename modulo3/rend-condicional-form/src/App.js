@@ -23,22 +23,25 @@ function App() {
   }
   
   const switchForm = () => {
-    if (stage === "form1") {
-      return (
-        <Form1 setEnsino={setEnsino} buttonStage={() => buttonStage("form2")} />
-      )
-    } else if (stage === "form2" && ensino === "superior") {
-      return (
-        <Form2 buttonStage={() => buttonStage("end")} />
-      )
-    } else if (stage === "form2" && ensino === "medio") {
-      return (
-        <Form3 buttonStage={() => buttonStage("end")} />
-      )
-    } else {
-      return (
-        <End />
-      )
+    switch (stage) {
+      case "form1":
+        return (
+          <Form1 setEnsino={setEnsino} buttonStage={() => buttonStage("form2")} />
+        )
+      case "form2":
+        if (ensino === "superior") {
+          return (
+            <Form2 buttonStage={() => buttonStage("end")} />
+          )
+        } else {
+          return (
+            <Form3 buttonStage={() => buttonStage("end")} />
+          )
+        }
+      case "end":
+        return (
+          <End />
+        )
     }
   }
 
