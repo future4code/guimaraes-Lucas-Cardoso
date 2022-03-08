@@ -148,27 +148,29 @@ const FormRegister = ({ setUsers }) => {
         getUsers()
     }, [])
 
-    const getUsers = () => {
-        axios
-        .get(apiUrl, headers)
-        .then((res) => setUsers(res.data))
-        .catch((err) => console.log(err))
+    const getUsers = async () => {
+        try {
+            const response = await axios.get(apiUrl, headers)
+            setUsers(response.data)
+        } catch (err) {
+            console.log(err.response.data)
+        }
     }
 
-    const createUser = () => {
+    const createUser = async () => {
         const body = {
             name: nameInput,
             email: emailInput
         }
 
-        axios
-            .post(apiUrl, body, headers)
-            .then(() => {
-                alert(`Usuário ${body.name} criado com sucesso!`)
-                getUsers()
-            })
-            .catch(() => alert(`Falha ao criar usuário`))
+        try {
+            await axios.post(apiUrl, body, headers)
+            alert(`Usuário ${body.name} criado com sucesso!`)
+            getUsers()
+        } catch (err) {
+            console.log(err.response.data)
         }
+    }
 
     return (
         <Container>

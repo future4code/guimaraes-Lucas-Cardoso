@@ -74,11 +74,13 @@ const UserListDisplay = ({ users, setUsers }) => {
         setUsers(users.filter((item) => item.id !== id))
     }
 
-    const deleteUser = (id) => {
-        axios
-            .delete(`${apiUrl}/${id}`, headers)
-            .then(() => removeFromState(id))
-            .err((err) => console.log(err))
+    const deleteUser = async (id) => {
+        try {
+            await axios.delete(`${apiUrl}/${id}`, headers)
+            removeFromState(id)
+        } catch (err) {
+            console.log(err.response.data)
+        }
     }
 
     return (
