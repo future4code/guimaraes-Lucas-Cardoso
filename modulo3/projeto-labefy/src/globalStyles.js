@@ -9,18 +9,23 @@ const GlobalStyle = createGlobalStyle`
         --secondary-color: #1a1a1a;
         --background-color: #242424;
         --white: #b9b9b9;
+        --black: #0c0c0c;
     }
 
     body {
         margin: 0;
         padding: 0;
-        font-family: 'Fredoka', sans-serif;
+        font-family: 'Ruda', sans-serif;
         background-color: var(--secondary-color);
     }
 
     button {
         cursor: pointer;
-        font-family: 'Fredoka', sans-serif;
+        font-family: 'Ruda', sans-serif;
+    }
+
+    input {
+        font-family: 'Ruda', sans-serif;
     }
 `
 

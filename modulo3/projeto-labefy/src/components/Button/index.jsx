@@ -3,12 +3,12 @@ import styled from 'styled-components'
 
 const ButtonContainer = styled.button`
     font-family: 'Ruda', sans-serif;
-    width: 135px;
-    height: 50px;
+    width: 150px;
+    height: 45px;
     border-radius: 25px;
     background-color: ${props => props.color1};
     color: ${props => props.color2};
-    font-size: 1.15rem;
+    font-size: 1vw;
     border: none;
     transition: background-color 0.75s ease;
     font-weight: bold;

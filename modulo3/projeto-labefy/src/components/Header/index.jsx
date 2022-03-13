@@ -4,12 +4,16 @@ import SpeakerLogo from '../../images/speakers.png'
 import Button from '../Button'
 
 const Container = styled.header`
+    position: fixed;
+    width: 100%;
     background-color: var(--main-color);
     height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5px 1.25rem;
+    padding: 5px 0rem;
+    top: 0;
+    z-index: 3;
 `
 
 const Space = styled.div`
@@ -24,13 +28,13 @@ const Logo = styled.div`
     height: 75px;
 
     img {
-        max-height: 70%;
+        max-height: 65%;
         margin-right: 7px;
         filter: invert(1);
     }
 
     h1 {
-        font-size: 45px;
+        font-size: 40px;
         margin-left: 7px;
         color: white;
     }
