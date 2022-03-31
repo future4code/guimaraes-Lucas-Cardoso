@@ -7,7 +7,7 @@ const Container = styled.div`
 const LoginPage = () => {
     return (
         <Container>
-
+            Login Page
         </Container>
     )
 }

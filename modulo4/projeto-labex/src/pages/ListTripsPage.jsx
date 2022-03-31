@@ -7,7 +7,7 @@ const Container = styled.div`
 const ListTripsPage = () => {
     return (
         <Container>
-
+            List Trips Page
         </Container>
     )
 }

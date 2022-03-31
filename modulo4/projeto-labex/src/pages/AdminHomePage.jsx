@@ -7,7 +7,7 @@ const Container = styled.div`
 const AdminHomePage = () => {
     return (
         <Container>
-
+            Admin Home Page
         </Container>
     )
 }
