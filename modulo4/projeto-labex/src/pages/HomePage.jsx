@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom'
 import Wallpaper from '../images/wallpaper.png'
-import { useEffect } from 'react'
+import Button from '../components/Button'
+import Button2 from '../components/Button2'
 
 const Container = styled.div`
     width: 100%;
@@ -35,33 +36,6 @@ const Info = styled.div`
 
     div {
         display: flex;
-
-        button {
-            margin: 10px;
-            background-color: white;
-            color: black;
-            border: 1px solid white;
-            width: 250px;
-            padding: 25px;
-            border-radius: 35px;
-            font-size: 16px;
-            transition: all 0.2s ease;
-
-            :hover {
-                background-color: transparent;
-                color: white;
-            }
-        }
-
-        .altButton {
-            background-color: transparent;
-            color: white;
-
-            :hover {
-                background-color: white;
-                color: black;
-            }
-        }
     }
 `
 
@@ -88,8 +62,8 @@ const HomePage = () => {
                     abaixo “Ver Viagens” e faça sua inscrição para sua viagem dos sonhos.
                 </p>
                 <div>
-                    <button onClick={() => navigate("/trips/list")}>List Trips Page</button>
-                    <button onClick={() => goToProtectedPage("/admin/trips/list")}>Admin Home Page</button>
+                    <Button onClick={() => navigate("/trips/list")}>List Trips Page</Button>
+                    <Button2 onClick={() => goToProtectedPage("/admin/trips/list")}>Admin Home Page</Button2>
                 </div>
             </Info>
             <img src={Wallpaper} alt="Wallpaper" className='background' />
