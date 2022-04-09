@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import ListTripsPage from './pages/ListTripsPage';
 import LoginPage from './pages/LoginPage';
 import TripDetailsPage from './pages/TripDetailsPage';
+import { useState } from 'react';
 
 const Container = styled.div`
 `
