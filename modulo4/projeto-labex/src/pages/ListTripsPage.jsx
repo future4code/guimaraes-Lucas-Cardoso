@@ -162,6 +162,12 @@ const ListTripsPage = (props) => {
                             duration={item.durationInDays}
                             date={item.date}
                             deleteTrip={() => deleteTrip(item.id, item.name)}
+                            handleClick={() => {
+                                localStorage.setItem("currentTripId", item.id)
+                                localStorage.setItem("currentTripName", item.name)
+                                navigate("/trips/application")
+                            }}
+                            trash={false}
                         />
                     ))
                 )}

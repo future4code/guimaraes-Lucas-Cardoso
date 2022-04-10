@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import wallpaper from '../images/wallpaper-no-shuttle.png'
 import useForm from '../hooks/useForm'
 import Input from '../components/Input'
 import Button from '../components/Button'
@@ -13,6 +11,7 @@ const Container = styled.div`
     width: 100%;
     overflow: hidden;
     height: calc(100vh - 60px);
+    background-color: var(--background);
 
     img {
         max-width: 100%;
@@ -119,7 +118,6 @@ const LoginPage = () => {
                     </div>
                 </form>
             </Info>
-            <img src={wallpaper} alt="Wallaper" />
         </Container>
     )
 }

@@ -2,7 +2,7 @@
 
 # Link do Surge
 
-groovy-blood.surge.sh
+https://scared-mountain.surge.sh/
 
 # Layout no Figma
 

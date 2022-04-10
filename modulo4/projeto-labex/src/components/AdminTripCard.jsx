@@ -81,6 +81,25 @@ const Opacity = styled.div`
     border-radius: 10px;
     opacity: 0%;
     transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    p {
+        padding: 30px;
+        color: lightgray;
+    }
+
+    .moreinfo {
+        font-size: 14px;
+    }
+
+    div {
+        display: flex;
+        position: absolute;
+        transform: translateY(90px);
+    }
 `
 
 const AdminTripsCard = (props) => {
@@ -113,7 +132,13 @@ const AdminTripsCard = (props) => {
         <>
         <Container planet={planet} onClick={() => navigate(`/admin/trips/${props.id}`)} >
             <BsFillTrashFill onClick={() => props.deleteTrip()} />
-            <Opacity id='opacity' />
+            <Opacity id='opacity'>
+                <p><i>'{props.description}'</i></p>
+                <div>
+                    <p className='moreinfo'>{props.date}</p>
+                    <p className='moreinfo'>{props.duration} dias</p>
+                </div>
+            </Opacity>
             <div id='title'>
                 <h3>{props.name}</h3>
             </div>

@@ -9,6 +9,7 @@ import urano from '../images/planets/urano.jpg'
 import netuno from '../images/planets/netuno.jpg'
 import plutao from '../images/planets/plutao.jpg'
 import { useNavigate } from 'react-router-dom'
+import { BsFillTrashFill } from 'react-icons/bs'
 
 const Container = styled.div`
     height: 300px;
@@ -24,6 +25,7 @@ const Container = styled.div`
     background-size: 80%;
     background-position: 50% 10%;
     background-repeat: no-repeat;
+    z-index: 4;
 
     #title {
         background-color: #bbbbbb;
@@ -45,12 +47,13 @@ const Container = styled.div`
 
     svg {
         position: absolute;
-        font-size: 25px;
+        font-size: 22px;
         color: white;
         opacity: 0%;
         transform: translate(-100px, 10px);
         transition: all 0.2s ease;
-        z-index: 3;
+        z-index: 5;
+        visibility: ${props => props.children[0].props.trash === true ? 'initial' : 'hidden'};
 
         :hover {
             color: #ff0000c4;
@@ -89,6 +92,16 @@ const Opacity = styled.div`
         padding: 30px;
         color: lightgray;
     }
+
+    .moreinfo {
+        font-size: 14px;
+    }
+
+    div {
+        display: flex;
+        position: absolute;
+        transform: translateY(90px);
+    }
 `
 
 const TripsCard = (props) => {
@@ -116,19 +129,20 @@ const TripsCard = (props) => {
         }
     }
 
-    const planet = checkPlanet()
+    const preventLoading = false
 
-    const handleClick = () => {
-        localStorage.setItem("currentTripId", props.id)
-        localStorage.setItem("currentTripName", props.name)
-        navigate("/trips/application")
-    }
+    const planet = checkPlanet()
 
     return (
         <>
-        <Container planet={planet} onClick={handleClick} >
+        <Container planet={planet} onClick={props.handleClick} >
+            <BsFillTrashFill trash={props.trash} onClick={props.deleteTrip} />
             <Opacity id='opacity'>
                 <p><i>'{props.description}'</i></p>
+                <div>
+                    <p className='moreinfo'>{props.date}</p>
+                    <p className='moreinfo'>{props.duration} dias</p>
+                </div>
             </Opacity>
             <div id='title'>
                 <h3>{props.name}</h3>

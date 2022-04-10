@@ -10,6 +10,7 @@ const Container = styled.header`
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 10;
 
     h2 {
         font-weight: 300;

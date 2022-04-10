@@ -10,9 +10,7 @@ import ListTripsPage from './pages/ListTripsPage';
 import LoginPage from './pages/LoginPage';
 import TripDetailsPage from './pages/TripDetailsPage';
 import { useState } from 'react';
-
-const Container = styled.div`
-`
+import Footer from './components/Footer';
 
 const ContentContainer = styled.div`
   min-height: calc(100vh - 60px);
@@ -37,6 +35,7 @@ const App = () => {
           <Route path="/admin/trips/:id" element={<TripDetailsPage />} />
         </Routes>
       </ContentContainer>
+      <Footer />
     </BrowserRouter>
     </>
   )

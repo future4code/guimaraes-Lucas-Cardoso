@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
 import { useEffect } from 'react'
-import AdminTripsCard from '../components/AdminTripCard'
+import TripsCard from '../components/TripsCard'
 
 const Container = styled.div`
     background-color: var(--background);
@@ -164,7 +164,7 @@ const AdminHomePage = () => {
                     </NoTravels>
                 ): (
                     trips.map(item => (
-                        <AdminTripsCard
+                        <TripsCard
                             id={item.id}
                             name={item.name}
                             description={item.description}
@@ -172,6 +172,8 @@ const AdminHomePage = () => {
                             duration={item.durationInDays}
                             date={item.date}
                             deleteTrip={() => deleteTrip(item.id, item.name)}
+                            handleClick={() => navigate(`/admin/trips/${item.id}`)}
+                            trash={true}
                         />
                     ))
                 )}
