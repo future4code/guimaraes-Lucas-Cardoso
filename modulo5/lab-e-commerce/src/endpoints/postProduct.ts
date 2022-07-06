@@ -19,7 +19,7 @@ export async function postProduct (req: Request, res: Response) {
         res.status(201).send('Produto cadastrado com sucesso')
     }
 
-    catch (error) {
-        res.status(400).send('Informações do body incorretas, checar documentação')
+    catch (error: any) {
+        res.status(400).send(error.message)
     }
 }

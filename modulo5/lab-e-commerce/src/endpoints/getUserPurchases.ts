@@ -12,7 +12,7 @@ export async function getUserPurchases (req: Request, res: Response) {
         res.status(200).send(result)
     }
     
-    catch (error) {
-        res.status(400).send(error)
+    catch (error: any) {
+        res.status(400).send(error.message)
     }
 }

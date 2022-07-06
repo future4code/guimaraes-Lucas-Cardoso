@@ -1,4 +1,4 @@
-import { connection } from "../data/connection";
+import { connection } from '../data/connection'
 import { Request, Response } from 'express'
 
 export async function getAllProducts (req: Request, res: Response) {
@@ -10,8 +10,8 @@ export async function getAllProducts (req: Request, res: Response) {
         res.status(200).send(result)
     }
 
-    catch (error) {
-        res.status(400).send(error)
+    catch (error: any) {
+        res.status(400).send(error.message)
     }
 
 }

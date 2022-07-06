@@ -20,8 +20,8 @@ export async function postUser (req: Request, res: Response): Promise<void> {
         res.status(201).send('Usuário criado com sucesso')
     }
 
-    catch (error) {
-        res.status(400).send('Informações do body incorretas, checar documentação')
+    catch (error: any) {
+        res.status(400).send(error.message)
     }
 
 }
