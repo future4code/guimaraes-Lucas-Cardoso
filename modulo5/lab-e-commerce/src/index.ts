@@ -6,10 +6,12 @@ import { postProduct } from "./endpoints/postProduct";
 import { postPurchase } from "./endpoints/postPurchase";
 import { postUser } from "./endpoints/postUser";
 
+// GET
 app.get('/users', getAllUsers)
 app.get('/products', getAllProducts)
 app.get('/users/:user_id/purchases', getUserPurchases)
 
+// POST
 app.post('/users', postUser)
 app.post('/products', postProduct)
 app.post('/purchases', postPurchase)

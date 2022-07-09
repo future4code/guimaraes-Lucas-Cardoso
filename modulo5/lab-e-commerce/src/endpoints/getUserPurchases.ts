@@ -9,6 +9,8 @@ export async function getUserPurchases (req: Request, res: Response) {
         .select()
         .where('user_id', user_id)
 
+        if (result.length < 1) throw new Error('Usuário não encontrado')
+
         res.status(200).send(result)
     }
     

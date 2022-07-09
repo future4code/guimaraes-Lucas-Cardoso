@@ -8,6 +8,10 @@ export async function postProduct (req: Request, res: Response) {
 
         if (!name || !price || !image_url) throw new Error('Informações do body incorretas, checar documentação')
 
+        if (typeof name !== 'string') throw new Error('O nome deve ser uma string')
+        if (typeof price !== 'number') throw new Error('O preço deve ser um número')
+        if (typeof image_url !== 'string') throw new Error('O link da imagem deve ser uma string')
+
         await connection('labecommerce_products')
         .insert({
             id: generateId(),
