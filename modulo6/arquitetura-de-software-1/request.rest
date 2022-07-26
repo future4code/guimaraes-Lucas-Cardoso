@@ -1,0 +1,18 @@
+GET http://localhost:3003/all
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/createUser
+Content-Type: application/json
+
+{
+    "name": "Amarildo Silva",
+    "email": "amarildo@gmail.com",
+    "password": "123456"
+}
+
+###
+
+DELETE http://localhost:3003/2cf41742-b873-4bcc-8aba-8e3a50051c67
+Content-Type: application/json
