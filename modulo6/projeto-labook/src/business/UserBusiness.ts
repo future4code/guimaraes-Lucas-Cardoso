@@ -47,4 +47,15 @@ export class UserBusiness {
             throw new CustomError(error.message || error.sqlMessage, error.statusCode)
         }
     }
+
+    public getAll = async (): Promise<any[]> => {
+
+        try {
+            return await new UserDatabase().getAll()
+        }
+
+        catch (error: any) {
+            throw new CustomError(error.message || error.sqlMessage, error.statusCode)
+        }
+    }
 }
