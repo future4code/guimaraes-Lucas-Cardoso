@@ -1,0 +1,25 @@
+# @name signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "email": "osbourne@oscorp.com" ,
+   "password": "ihatepeter"
+}
+
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "osbourne@oscorp.com" ,
+   "password": "ihatepeter"
+}
+
+###
+
+GET http://localhost:3003/user/profile
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyMmVmNjI4LWY1NDAtNDNkMC1iNTZlLWMxNTY3NjYzMmMxNiIsImlhdCI6MTY2MDY5NzI2MiwiZXhwIjoxNjYwNzAwODYyfQ.z-nV69JGtvM8tBi7yAykFe7jApySgsA0bX-XBceDDXU
+Content-Type: application/json
