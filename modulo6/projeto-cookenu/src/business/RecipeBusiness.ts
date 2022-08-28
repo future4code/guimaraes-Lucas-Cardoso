@@ -6,6 +6,7 @@ import { UserNotFound } from "../error/UserNotFound";
 import { recipeInput, recipe, getRecipe } from "../model/recipe";
 import IdGenerator from "../services/IdGenerator";
 import { TokenGenerator } from "../services/TokenGenerator";
+import { FollowBusiness } from "./FollowBusiness";
 
 export class RecipeBusiness {
 
@@ -46,6 +47,24 @@ export class RecipeBusiness {
             if (!result) throw new RecipeNotFound()
 
             return result
+        }
+
+        catch (error: any) {
+            throw new CustomError(error.message, error.statusCode)
+        }
+    }
+
+    public getFeed = async (token: string): Promise<recipe[]> => {
+        try {
+            if (!token) throw new InvalidRequest()
+
+            const { id } = new TokenGenerator().tokenData(token)
+
+            const follows: string[] = await new FollowBusiness().getFollows(id)
+
+            console.log(follows)
+
+            return await new RecipeDatabase().getFeed(follows)
         }
 
         catch (error: any) {

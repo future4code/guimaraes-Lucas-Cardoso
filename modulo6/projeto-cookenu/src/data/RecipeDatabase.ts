@@ -33,4 +33,17 @@ export class RecipeDatabase extends BaseDatabase {
             throw new Error(error.sqlMessage)
         }
     }
+
+    public getFeed = async (follows: string[]): Promise<recipe[]> => {
+        try {
+            return await RecipeDatabase.connection(RecipeDatabase.TABLE_NAME)
+            .select('*')
+            .whereIn('author_id', follows)
+            .orderBy('created_at', 'desc')
+        }
+
+        catch (error: any) {
+            throw new Error(error.sqlMessage)
+        }
+    }
 }

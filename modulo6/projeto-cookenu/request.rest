@@ -2,9 +2,9 @@ POST http://localhost:3003/signup
 Content-Type: application/json
 
 {
-    "name": "Luiza Lima",
-    "email": "luiza@email.com",
-    "password": "ilovesekiro"
+    "name": "Geanmarco Lima",
+    "email": "geanmarco@email.com",
+    "password": "ilovebetting"
 }
 
 ###
@@ -20,30 +20,56 @@ Content-Type: application/json
 ###
 
 GET http://localhost:3003/user/profile
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYTU2YjZjLTRmN2UtNGY3OC05NGY4LWQxMGVmMjg2OTFkYiIsIm5hbWUiOiJMdWNhcyBDYXJkb29zIiwiZW1haWwiOiJsdWNhc0BlbWFpbC5jb20iLCJpYXQiOjE2NjE1NDc1NjcsImV4cCI6MTY2MTU1MTE2N30.cF-Yov_cDdIU2LUhsugC-_rAnV34z5IgkDn55b5TAGo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmMjJhMTNjLWJkZTQtNGYyNS1iY2M5LWMwNjEwMzY3ZWExNCIsIm5hbWUiOiJHZWFubWFyY28gTGltYSIsImVtYWlsIjoiZ2Vhbm1hcmNvQGVtYWlsLmNvbSIsImlhdCI6MTY2MTY5ODI0MCwiZXhwIjoxNjYxNzAxODQwfQ.aUd4Q5j1nDj4JEy77-f4wX0bDDBSKrq8SOPo591yrCo
 Content-Type: application/json
 
 ###
 
 GET http://localhost:3003/user/269dc73f-aa60-4977-8a44-63875ef4bee2
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYTU2YjZjLTRmN2UtNGY3OC05NGY4LWQxMGVmMjg2OTFkYiIsIm5hbWUiOiJMdWNhcyBDYXJkb29zIiwiZW1haWwiOiJsdWNhc0BlbWFpbC5jb20iLCJpYXQiOjE2NjE1NDc1NjcsImV4cCI6MTY2MTU1MTE2N30.cF-Yov_cDdIU2LUhsugC-_rAnV34z5IgkDn55b5TAGo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2OWRjNzNmLWFhNjAtNDk3Ny04YTQ0LTYzODc1ZWY0YmVlMiIsIm5hbWUiOiJMdWl6YSBMaW1hIiwiZW1haWwiOiJsdWl6YUBlbWFpbC5jb20iLCJpYXQiOjE2NjE2OTU1ODMsImV4cCI6MTY2MTY5OTE4M30.eizva-kUukwP-Z-9xbGNjxShFLhezO016CrYurXSD3U
 Content-Type: application/json
 
 ###
 
 POST http://localhost:3003/recipe/
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYTU2YjZjLTRmN2UtNGY3OC05NGY4LWQxMGVmMjg2OTFkYiIsIm5hbWUiOiJMdWNhcyBDYXJkb29zIiwiZW1haWwiOiJsdWNhc0BlbWFpbC5jb20iLCJpYXQiOjE2NjE1NDc1NjcsImV4cCI6MTY2MTU1MTE2N30.cF-Yov_cDdIU2LUhsugC-_rAnV34z5IgkDn55b5TAGo
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI2OWRjNzNmLWFhNjAtNDk3Ny04YTQ0LTYzODc1ZWY0YmVlMiIsIm5hbWUiOiJMdWl6YSBMaW1hIiwiZW1haWwiOiJsdWl6YUBlbWFpbC5jb20iLCJpYXQiOjE2NjE2OTg1MzAsImV4cCI6MTY2MTcwMjEzMH0.hGi3ORrv8WpgKnvVt4W-gEyzampNEdpHLS0C1mytNDM
 Content-Type: application/json
 
 {
-   "title": "Poção de andorinha" ,
-   "description": "1x Destilado Anão, 5x Quelidônia, 1x Cérebro de Afogado"
+   "title": "Receita counter Isshin Ashina" ,
+   "description": "Botão direito 2x, shift 2x, botão esquerdo"
 }
 
 ###
 
 GET http://localhost:3003/recipe/5010550d-ccc9-4fef-ae9c-986298e36d22
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYTU2YjZjLTRmN2UtNGY3OC05NGY4LWQxMGVmMjg2OTFkYiIsIm5hbWUiOiJMdWNhcyBDYXJkb29zIiwiZW1haWwiOiJsdWNhc0BlbWFpbC5jb20iLCJpYXQiOjE2NjE1NDc1NjcsImV4cCI6MTY2MTU1MTE2N30.cF-Yov_cDdIU2LUhsugC-_rAnV34z5IgkDn55b5TAGo
+Content-Type: application/json
+
+###
+
+POST http://localhost:3003/user/follow
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYTU2YjZjLTRmN2UtNGY3OC05NGY4LWQxMGVmMjg2OTFkYiIsIm5hbWUiOiJMdWNhcyBDYXJkb29zIiwiZW1haWwiOiJsdWNhc0BlbWFpbC5jb20iLCJpYXQiOjE2NjE2OTU2MzYsImV4cCI6MTY2MTY5OTIzNn0.gjs_UkYOppKXEh3uNPTEh2qCanc6FUDFVvKALY8uEoc
+Content-Type: application/json
+
+{
+   "userToFollowId": "ff22a13c-bde4-4f25-bcc9-c0610367ea14"
+}
+
+###
+
+POST http://localhost:3003/user/unfollow
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYTU2YjZjLTRmN2UtNGY3OC05NGY4LWQxMGVmMjg2OTFkYiIsIm5hbWUiOiJMdWNhcyBDYXJkb29zIiwiZW1haWwiOiJsdWNhc0BlbWFpbC5jb20iLCJpYXQiOjE2NjE2OTU2MzYsImV4cCI6MTY2MTY5OTIzNn0.gjs_UkYOppKXEh3uNPTEh2qCanc6FUDFVvKALY8uEoc
+Content-Type: application/json
+
+{
+   "userToUnfollowId": "269dc73f-aa60-4977-8a44-63875ef4bee2"
+}
+
+###
+
+GET http://localhost:3003/user/feed
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFkYTU2YjZjLTRmN2UtNGY3OC05NGY4LWQxMGVmMjg2OTFkYiIsIm5hbWUiOiJMdWNhcyBDYXJkb29zIiwiZW1haWwiOiJsdWNhc0BlbWFpbC5jb20iLCJpYXQiOjE2NjE2OTc4MDUsImV4cCI6MTY2MTcwMTQwNX0.IPfA4xyl1DqKmBIzwkZv9zAWxu17H8sQfH032PILgQg
 Content-Type: application/json
 
 ###
