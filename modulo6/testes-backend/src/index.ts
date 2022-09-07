@@ -1,32 +1,30 @@
 import express from 'express'
-import knex from 'knex'
 import cors from 'cors'
-import dotenv from 'dotenv'
-
-
-dotenv.config()
-
-export const connection = knex({
-   client: 'mysql',
-   connection: {
-      host: process.env.DB_HOST,
-      user: process.env.DB_USER,
-      password: process.env.DB_PASSWORD,
-      database: process.env.DB_NAME,
-      port: 3306
-   }
-})
-
+import { User } from './endpoints/User'
+import { UserDatabase } from './data/UserDatabase'
 
 const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.get("/", async function(req,res){
-   res.send(await connection.raw('show tables'))
-})
-
-
 app.listen(3003, () => {
    console.log('Servidor rodando na porta 3003')
 })
+
+app.get("/users/profile/:id", async (req, res) => {
+   try {
+      const { id } = req.params
+
+      const userDatabase = new UserDatabase()
+      const result = await new User(userDatabase).getUserById(id)
+      
+      res.status(200).send(result)
+   }
+
+   catch (error: any) {
+      res.status(error.statusCode || 400).send(error.message)
+   }
+   
+})
+
+
