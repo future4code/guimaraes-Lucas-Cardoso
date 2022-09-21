@@ -6,20 +6,20 @@ const Container = styled.div`
 `
 
 const Clover1 = styled.div`
-    width: 50px;
-    height: 30px;
+    width: 40px;
+    height: 26px;
     border-radius: 15px 0px 0px 15px;
     background-color: white;
 
 `
 
 const Clover2 = styled.div`
-    width: 50px;
-    height: 30px;
-    border-radius: 15px 0px 0px 15px;
+    width: 40px;
+    height: 26px;
+    border-radius: 13px 0px 0px 13px;
     background-color: white;
     rotate: 90deg;
-    translate: 10px 20px;
+    translate: 7px 20px;
 `
 
 const Clover = ({ invert }) => {
