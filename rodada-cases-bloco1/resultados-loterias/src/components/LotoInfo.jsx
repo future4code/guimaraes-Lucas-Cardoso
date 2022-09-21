@@ -1,15 +1,15 @@
 import styled from 'styled-components'
-import LotoIcon from "./components/LotoIcon"
 
 const Container = styled.div`
-    padding: 1rem;
+
 `
 
-const App = () => {
+const LotoInfo = () => {
     return (
         <Container>
+
         </Container>
     )
 }
 
-export default App
+export default LotoInfo
