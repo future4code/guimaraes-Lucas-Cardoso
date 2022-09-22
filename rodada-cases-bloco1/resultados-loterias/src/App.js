@@ -45,10 +45,12 @@ const App = () => {
     }, [selectedLottery])
 
     return (
+        <>
         <Container backgroundColor={backgroundColor}>
             <LotoInfo />
             <LotoResults />
         </Container>
+        </>
     )
 }
 

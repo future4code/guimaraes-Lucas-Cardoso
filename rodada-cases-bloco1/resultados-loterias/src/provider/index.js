@@ -1,10 +1,9 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const LotteryContext = createContext()
 
 const LotteryProvider = ({ children }) => {
     const [lotteries, setLotteries] = useState([])
-    const [contest, setContest] = useState({})
     const [selectedLottery, setSelectedLottery] = useState({})
 
     const getLotteries = () => {
@@ -22,16 +21,21 @@ const LotteryProvider = ({ children }) => {
         })
     }
     
-    const getResult = (contestId) => {
-        fetch(`https://brainn-api-loterias.herokuapp.com/api/v1/concursos/${contestId}`)
-        .then(res => res.json())
-        .then(res => setSelectedLottery(res))
+    const getResult = async (contestId) => {
+        try {
+            fetch(`https://brainn-api-loterias.herokuapp.com/api/v1/concursos/${contestId}`)
+            .then(res => res.json())
+            .then(res => setSelectedLottery(res))
+        }
+
+        catch (error) {
+            console.log(error)
+        }
     }
     
     return (
         <LotteryContext.Provider value={{
             lotteries,
-            contest,
             selectedLottery,
             getLotteries,
             getContestWithId,

@@ -15,9 +15,10 @@ const Container = styled.select`
 
 const Select = () => {
     const { getLotteries, lotteries, getContestWithId } = useLottery()
-
+    
     const handleChange = (e) => {
-        getContestWithId(Number(e))
+        e.preventDefault()
+        getContestWithId(Number(e.target.value))
     }
 
     useEffect(() => {
@@ -25,7 +26,7 @@ const Select = () => {
     }, [])
 
     return (
-        <Container onChange={(e) => handleChange(e.target.value)}>
+        <Container onChange={(e) => handleChange(e)}>
             {lotteries.map((loteria, index) => (
                 <option key={index} value={loteria.id}>{loteria.nome}</option>
             ))}
