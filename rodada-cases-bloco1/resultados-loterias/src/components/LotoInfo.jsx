@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { useLottery } from '../provider'
 import LotoIcon from './LotoIcon'
 import Select from './Select'
 
@@ -7,12 +8,10 @@ const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    border-radius: 0px 0px 50% 50% / 0px 0px 7% 7%;
-    background-color: #6BEFA3;
     min-height: 48vh;
 
     select {
-        margin: 10% 0px 5% 0px;
+        margin: 2.5rem 0px 5% 0px;
     }
 
     .iconContainer {
@@ -24,7 +23,8 @@ const Container = styled.div`
     h1 {
         margin: 0;
         color: white;
-        font-weight: bold;
+        font-weight: 600;
+        text-transform: uppercase;
     }
 
     p {
@@ -35,14 +35,18 @@ const Container = styled.div`
 `
 
 const LotoInfo = () => {
+    const { lotteries, selectedLottery } = useLottery()
+
+    const [ lotteryName ] = lotteries.filter(lottery => lottery.id === selectedLottery.loteria)
+
     return (
         <Container>
             <Select />
             <div className='iconContainer'>
                 <LotoIcon />
-                <h1>MEGA-SENA</h1>
+                <h1>{lotteryName?.nome}</h1>
             </div>
-            <p>CONCURSO Nº 4560</p>
+            <p>CONCURSO Nº {selectedLottery?.id}</p>
         </Container>
     )
 }
