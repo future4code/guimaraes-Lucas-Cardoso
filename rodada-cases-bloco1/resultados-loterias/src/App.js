@@ -6,6 +6,12 @@ import { useLottery } from './provider'
 
 const Container = styled.div`
     background-color: ${props => props.backgroundColor || '#6BEFA3'};
+    transition: all 0.25s ease;
+    
+    @media (min-width: 1200px) {
+        display: flex;
+        width: 100%;
+    }
 `
 
 const App = () => {

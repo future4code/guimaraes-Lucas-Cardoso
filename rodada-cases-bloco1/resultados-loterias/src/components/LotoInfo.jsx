@@ -10,6 +10,10 @@ const Container = styled.div`
     justify-content: space-between;
     min-height: 48vh;
 
+    @media (min-width: 1200px) {
+        width: 50%;
+    }
+
     select {
         margin: 2.5rem 0px 5% 0px;
     }
@@ -18,6 +22,14 @@ const Container = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+            
+            h1 {
+                margin-left: 1.5rem;
+            }
+        }
     }
 
     h1 {
