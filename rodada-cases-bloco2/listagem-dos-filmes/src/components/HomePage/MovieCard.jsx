@@ -5,18 +5,23 @@ const Container = styled.div`
 
     :hover {
         h3 {
-            color: #3b3b3b;
+            color: #585858;
+            transition: 0.25s ease all;
+        }
+
+        p {
+            color: #808080;
             transition: 0.25s ease all;
         }
 
         img {
-            filter: opacity(90%);
+            filter: opacity(95%);
             transition: 0.15s ease all;
         }
     }
 
     img {
-        border-radius: 5px;
+        border-radius: 3px;
         display: block;
         width: 100%;
         max-width: 100%;
@@ -26,17 +31,17 @@ const Container = styled.div`
         font-size: 18px;
         margin: 0.5rem 0rem;
         letter-spacing: -0.5px;
+        font-weight: 700;
     }
 
     p {
         font-size: 15px;
-        font-weight: 600;
+        font-weight: 700;
         color: #6b6b6b;
     }
 `
 
 const MovieCard = ({ movie }) => {
-
     const convertMonth = (date) => {
         const onlyMonth = date.slice(5, 7)
         switch (onlyMonth) {

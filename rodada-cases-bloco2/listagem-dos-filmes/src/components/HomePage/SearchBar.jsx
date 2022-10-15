@@ -12,7 +12,7 @@ const Input = styled.input`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: gray;
     transition: 0.6s ease all;
-    font-size: 15px;
+    font-size: 18px;
 
     :focus {
         outline: none;

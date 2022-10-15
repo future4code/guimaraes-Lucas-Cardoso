@@ -4,15 +4,15 @@ import FilterCard from './FilterCard'
 import SearchBar from './SearchBar'
 
 const Container = styled.section`
-    background-color: #202020;
-    color: white;
+    background-color: var(--dark);
+    color: #dfdfdf;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: auto;
-    padding: 80px 0px;
+    padding: 80px 0px 40px 0px;
 
     @media (max-width: 800px) {
         padding: 40px 0px 10px 0px;
@@ -23,7 +23,7 @@ const Container = styled.section`
         width: 90%;
         font-size: 35px;
         text-align: center;
-        font-weight: 300;
+        font-weight: 500;
         text-shadow: 0px -1px 20px black;
 
         @media (max-width: 800px) {

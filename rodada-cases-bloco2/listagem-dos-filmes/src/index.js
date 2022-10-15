@@ -3,12 +3,18 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import GlobalStyle from './globalStyles';
+import PageProvider from './providers/PageProvider';
+import GetMovieProvider from './providers/GetMovieProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <GlobalStyle />
-    <App />
+    <GetMovieProvider>
+      <PageProvider>
+        <GlobalStyle />
+        <App />
+      </PageProvider>
+    </GetMovieProvider>
   </React.StrictMode>
 );
 

@@ -2,7 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     :root {
-        --max-width: 1060px;
+        --darker: #111111;
+        --dark: #202020;
     }
 
     body {
