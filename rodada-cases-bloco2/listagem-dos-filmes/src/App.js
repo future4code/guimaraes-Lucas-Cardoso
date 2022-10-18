@@ -1,7 +1,8 @@
 import styled from 'styled-components'
-import { Switch, Route, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
 import MoviePage from './pages/MoviePage'
+import React from 'react'
 
 const Container = styled.div`
 
@@ -10,10 +11,10 @@ const Container = styled.div`
 const App = () => {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route exact path='/' component={Home} />
-                <Route path='/filme/:movieName' component={MoviePage} />
-            </Switch>
+            <Routes>
+                <Route index element={<Home />} />
+                <Route path='/filme/:id' element={<MoviePage />} />
+            </Routes>
         </BrowserRouter>
     )
 }

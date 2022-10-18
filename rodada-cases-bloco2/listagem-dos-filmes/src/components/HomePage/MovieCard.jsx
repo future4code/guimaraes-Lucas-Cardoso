@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -42,6 +43,8 @@ const Container = styled.div`
 `
 
 const MovieCard = ({ movie }) => {
+    const navigate = useNavigate()
+
     const convertMonth = (date) => {
         const onlyMonth = date.slice(5, 7)
         switch (onlyMonth) {
@@ -69,13 +72,15 @@ const MovieCard = ({ movie }) => {
                 return 'NOV'
             case '12':
                 return 'DEZ'
+            default:
+                return ''
         }
     }
 
-    const newDate = `${movie.release_date.slice(-2)} ${convertMonth(movie.release_date)} ${movie.release_date.slice(0, 4)}`
+    const newDate = `${movie.release_date.slice(-2)} ${convertMonth(movie.release_date)} ${movie.release_date.slice(0, 4)}`  
 
     return (
-        <Container>
+        <Container onClick={() => navigate(`/filme/${movie.id}`)}>
             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
             <h3>{movie.title}</h3>
             <p>{newDate}</p>

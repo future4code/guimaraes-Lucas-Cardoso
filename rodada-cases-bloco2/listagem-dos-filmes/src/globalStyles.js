@@ -2,8 +2,9 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
     :root {
-        --darker: #111111;
-        --dark: #202020;
+        --secondBackground: #111111;
+        --mainBackground: #202020;
+        --textColor: #dfdfdf;
     }
 
     body {

@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import FilterCard from './FilterCard'
+import FilterCard from '../FilterCard'
 import SearchBar from './SearchBar'
 
 const Container = styled.section`
-    background-color: var(--dark);
-    color: #dfdfdf;
+    background-color: var(--mainBackground);
+    color: var(--textColor);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -81,6 +81,7 @@ const Button = styled.button`
 
 const FilterSection = () => {
     const [showMore, setShowMore] = useState({status: false, text: 'Ver mais'})
+    const [genres, setGenres] = useState([])
 
     const changeText = (status) => {
         if (status) {
@@ -90,12 +91,22 @@ const FilterSection = () => {
         }
     }
 
+    const fetchGenres = () => {
+        fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=17786cb3ca807acdb38ed5390c4eefdb&language=pt-BR`)
+        .then(res => res.json())
+        .then(res => setGenres(res.genres))
+    }
+
     const handleClick = () => {
         setShowMore({
             status: !showMore.status,
             text: changeText(!showMore.status)
         })
     }
+
+    useEffect(() => {
+        fetchGenres()
+    }, [])
 
     return (
         <Container showMore={showMore}>
@@ -105,25 +116,9 @@ const FilterSection = () => {
                 <p className='filter'>FILTRE POR:</p>
                 <FiltersContainer showMore={showMore}>
                     <div>
-                        <FilterCard name={'Ação'} />
-                        <FilterCard name={'Aventura'} />
-                        <FilterCard name={'Animação'} />
-                        <FilterCard name={'Comédia'} />
-                        <FilterCard name={'Crime'} />
-                        <FilterCard name={'Documentário'} />
-                        <FilterCard name={'Drama'} />
-                        <FilterCard name={'Família'} />
-                        <FilterCard name={'Fantasia'} />
-                        <FilterCard name={'História'} />
-                        <FilterCard name={'Terror'} />
-                        <FilterCard name={'Música'} />
-                        <FilterCard name={'Mistério'} />
-                        <FilterCard name={'Romance'} />
-                        <FilterCard name={'Ficção científica'} />
-                        <FilterCard name={'Cinema TV'} />
-                        <FilterCard name={'Suspense'} />
-                        <FilterCard name={'Guerra'} />
-                        <FilterCard name={'Faroeste'} />
+                        {genres.map((item, index) => (
+                            <FilterCard key={index} name={item.name} />
+                        ))}
                     </div>
                 </FiltersContainer>
                 <Button onClick={handleClick}>{showMore.text}</Button>

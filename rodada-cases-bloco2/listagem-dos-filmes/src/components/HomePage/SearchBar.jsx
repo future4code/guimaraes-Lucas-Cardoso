@@ -10,9 +10,10 @@ const Input = styled.input`
     border: none;
     //box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    color: gray;
+    color: #d6d6d6;
     transition: 0.6s ease all;
     font-size: 18px;
+    font-weight: 500;
 
     :focus {
         outline: none;
